@@ -1,11 +1,10 @@
 cmake_minimum_required(VERSION 3.27)
-project(GameOfLife_Qt)
+project(GameOfLifeQt)
 
 set(CMAKE_CXX_STANDARD 23)
-set(CMAKE_AUTOMOC ON)
-set(CMAKE_AUTORCC ON)
-set(CMAKE_AUTOUIC ON)
 
+set(SOURCE_FILES main.cpp)
+add_executable(GameOfLifeQt ${SOURCE_FILES})
 
 find_package(Qt6 COMPONENTS
         Core
@@ -13,10 +12,13 @@ find_package(Qt6 COMPONENTS
         Widgets
         REQUIRED)
 
-add_executable(GameOfLife_Qt main.cpp)
-target_link_libraries(GameOfLife_Qt
+target_link_libraries(GameOfLifeQt
         Qt::Core
         Qt::Gui
-        Qt::Widgets
-)
+        Qt::Widgets)
 
+include_directories(lib)
+add_subdirectory(lib)
+
+target_link_libraries(GameOfLifeQt GameOfLifeLib)
+add_subdirectory(tests)
