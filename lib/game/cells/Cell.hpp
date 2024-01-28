@@ -5,7 +5,8 @@
 #ifndef CELL_HPP
 #define CELL_HPP
 
-#include <tuple>
+#include <cstdint>
+#include <utility>
 
 class Cell {
 private:
@@ -15,7 +16,9 @@ public:
     Cell(uint16_t x, uint16_t y);
 
     uint32_t getId() const;
-    std::tuple<uint16_t, uint16_t> getCoordinates() const;
+    std::pair<uint16_t, uint16_t> getCoordinates() const;
+    bool operator<(const Cell &cell) const;
+    bool operator==(const Cell &cell) const;
 };
 
 #endif //CELL_HPP

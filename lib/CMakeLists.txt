@@ -10,10 +10,16 @@ include_directories(${PROJECT_SOURCE_DIR})
 
 set(HEADER_FILES
         settings.hpp
-        game/cells/Cell.hpp)
+        game/cells/Cell.hpp
+        game/cells/CellStorage.hpp
+        game/board/BoardUpdater.hpp
+        game/drawer/Drawer.hpp)
 
 set(SOURCE_FILES
-        game/cells/Cell.cpp)
+        game/cells/Cell.cpp
+        game/cells/CellStorage.cpp
+        game/board/BoardUpdater.cpp
+        game/drawer/Drawer.cpp)
 
 add_library(GameOfLifeLib STATIC
         ${HEADER_FILES}

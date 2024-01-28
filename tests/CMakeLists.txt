@@ -5,7 +5,8 @@ include_directories (${Boost_INCLUDE_DIRS})
 set(SOURCE_FILES
         cell-tests.cpp
         main.cpp
-        main.cpp)
+        main.cpp
+        board-updater-tests.cpp)
 
 add_executable (GameOfLifeTests ${SOURCE_FILES})
 target_link_libraries (GameOfLifeTests ${Boost_LIBRARIES})

@@ -10,21 +10,21 @@
 
 BOOST_AUTO_TEST_SUITE(CellTests)
 
-BOOST_AUTO_TEST_CASE(CellId) {
-    const Cell cell{1, 2};
+    BOOST_AUTO_TEST_CASE(CellId) {
+        const Cell cell{1, 2};
 
-    const uint32_t id = cell.getId();
+        const uint32_t id = cell.getId();
 
-    BOOST_CHECK_EQUAL(id, 65538);
-}
+        BOOST_CHECK_EQUAL(id, 65538);
+    }
 
-BOOST_AUTO_TEST_CASE(CellCoordinates) {
-    const Cell cell{1, 2};
+    BOOST_AUTO_TEST_CASE(CellCoordinates) {
+        const Cell cell{1, 2};
 
-    const std::tuple<uint16_t, uint16_t> coordinates = cell.getCoordinates();
+        const std::tuple<uint16_t, uint16_t> coordinates = cell.getCoordinates();
 
-    BOOST_CHECK_EQUAL(std::get<0>(coordinates), 1);
-    BOOST_CHECK_EQUAL(std::get<1>(coordinates), 2);
-}
+        BOOST_CHECK_EQUAL(std::get<0>(coordinates), 1);
+        BOOST_CHECK_EQUAL(std::get<1>(coordinates), 2);
+    }
 
 BOOST_AUTO_TEST_SUITE_END()

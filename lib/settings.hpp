@@ -2,11 +2,13 @@
 // Created by Imran Jabrayilov on 28.01.24.
 //
 
-#ifndef __GAME_HPP__
-#define __GAME_HPP__
+#ifndef __SETTINGS_HPP__
+#define __SETTINGS_HPP__
 
 #define BORDERLESS true
-#define HEIGHT 100
-#define WIDTH  100
+#define HEIGHT 20
+#define WIDTH  20
+#define UPDATE_PERIOD 500
+#define GUI true
 
-#endif // __GAME_HPP__
+#endif // __SETTINGS_HPP__
