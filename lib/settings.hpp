@@ -9,6 +9,6 @@
 #define HEIGHT 20
 #define WIDTH  20
 #define UPDATE_PERIOD 500
-#define GUI true
+#define GUI false
 
 #endif // __SETTINGS_HPP__

@@ -24,23 +24,20 @@ void Drawer::Show() {
     for (auto _ = 0; _ < WIDTH * 2; ++_) std::cout << '=';
     std::cout << "+" << std::endl;
 
-    while (true) {
-        std::this_thread::sleep_for(std::chrono::milliseconds(UPDATE_PERIOD));
-        auto cells = CellStorage::getCells();
-        CLEAR;
+    const auto cells = CellStorage::getCells();
+    CLEAR;
 
-        for (uint16_t row = 0; row < HEIGHT; ++row) {
-            std::cout << "|";
-            for (uint16_t col = 0; col < WIDTH; ++col) {
-                Cell cell{ row, col };
-                std::cout << (cells.contains(cell) ? "+ " : "  ");
-            }
-            std::cout << "|" << std::endl;
+    for (uint16_t row = 0; row < HEIGHT; ++row) {
+        std::cout << "|";
+        for (uint16_t col = 0; col < WIDTH; ++col) {
+            Cell cell{ row, col };
+            std::cout << (cells.contains(cell) ? "+ " : "  ");
         }
-        std::cout << "+";
-        for (auto _ = 0; _ < WIDTH * 2; ++_) std::cout << '=';
-        std::cout << "+" << std::endl;
-
-        BoardUpdater::Update();
+        std::cout << "|" << std::endl;
     }
+    std::cout << "+";
+    for (auto _ = 0; _ < WIDTH * 2; ++_) std::cout << '=';
+    std::cout << "+" << std::endl;
+
+    BoardUpdater::Update();
 }

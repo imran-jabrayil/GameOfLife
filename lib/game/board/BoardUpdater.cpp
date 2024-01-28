@@ -2,7 +2,6 @@
 // Created by Imran Jabrayilov on 28.01.24.
 //
 
-#include <map>
 #include <vector>
 
 #include "game/cells/Cell.hpp"
@@ -26,16 +25,15 @@ static std::vector<Cell> getNeighbours(const Cell& cell) {
 
     const auto [x, y] = cell.getCoordinates();
     for (const auto [fst, snd] : directions) {
-#ifdef BOARDLESS
+#if BORDERLESS
+        uint16_t newX = (x + HEIGHT + fst) % HEIGHT;
+        uint16_t newY = (y + WIDTH + snd) % WIDTH;
+#else // BORDERLESS
         if (x == 0 && fst == -1 || x == HEIGHT && fst == 1 ||
             y == 0 && snd == -1 || y == WIDTH && snd == 1) continue;
         uint16_t newX = x + fst;
         uint16_t newY = y + snd;
-#else // BOARDLESS
-        uint16_t newX = (x + HEIGHT + fst) % HEIGHT;
-        uint16_t newY = (y + WIDTH + snd) % WIDTH;
-#endif // BOARDLESS
-
+#endif // BORDERLESS
 
         neighbours.emplace_back( newX, newY );
     }
