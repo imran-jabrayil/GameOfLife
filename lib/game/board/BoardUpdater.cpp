@@ -31,10 +31,10 @@ static std::vector<Cell> getNeighbours(const Cell& cell) {
             y == 0 && snd == -1 || y == WIDTH && snd == 1) continue;
         uint16_t newX = x + fst;
         uint16_t newY = y + snd;
-#else
+#else // BOARDLESS
         uint16_t newX = (x + HEIGHT + fst) % HEIGHT;
         uint16_t newY = (y + WIDTH + snd) % WIDTH;
-#endif
+#endif // BOARDLESS
 
 
         neighbours.emplace_back( newX, newY );

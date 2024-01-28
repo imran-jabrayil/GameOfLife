@@ -2,8 +2,8 @@
 // Created by Imran Jabrayilov on 28.01.24.
 //
 
-#ifndef CELL_HPP
-#define CELL_HPP
+#ifndef __CELL_HPP__
+#define __CELL_HPP__
 
 #include <cstdint>
 #include <utility>
@@ -21,4 +21,4 @@ public:
     bool operator==(const Cell &cell) const;
 };
 
-#endif //CELL_HPP
+#endif // __CELL_HPP__

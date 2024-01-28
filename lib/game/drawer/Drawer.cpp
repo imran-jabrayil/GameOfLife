@@ -3,14 +3,13 @@
 //
 
 #include <iostream>
+#include <thread>
+
+#include "game/board/BoardUpdater.hpp"
 #include "game/cells/Cell.hpp"
 #include "game/cells/CellStorage.hpp"
 #include "game/drawer/Drawer.hpp"
-
-#include <thread>
-
 #include "settings.hpp"
-#include "game/board/BoardUpdater.hpp"
 
 #ifdef _WIN32
 #include <windows.h>

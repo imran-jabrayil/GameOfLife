@@ -2,8 +2,8 @@
 // Created by Imran Jabrayilov on 28.01.24.
 //
 
-#ifndef CELLSTORAGE_HPP
-#define CELLSTORAGE_HPP
+#ifndef __CELLSTORAGE_HPP__
+#define __CELLSTORAGE_HPP__
 
 #include <set>
 
@@ -19,4 +19,4 @@ public:
     static void updateCells(const std::set<Cell> &cells);
 };
 
-#endif //CELLSTORAGE_HPP
+#endif // __CELLSTORAGE_HPP__

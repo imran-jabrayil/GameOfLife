@@ -2,16 +2,12 @@
 // Created by Imran Jabrayilov on 28.01.24.
 //
 
-#ifndef DRAWER_HPP
-#define DRAWER_HPP
-
-
+#ifndef __DRAWER_HPP__
+#define __DRAWER_HPP__
 
 class Drawer {
 public:
     static void Show();
 };
 
-
-
-#endif //DRAWER_HPP
+#endif // __DRAWER_HPP__

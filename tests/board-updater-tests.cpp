@@ -21,12 +21,17 @@ BOOST_AUTO_TEST_SUITE(BoardUpdaterTests)
         BoardUpdater::Update();
 
         const auto cells = CellStorage::getCells();
-        BOOST_TEST(cells.size() == 1);
+        BOOST_REQUIRE(cells.size() == 2);
 
-        auto cell = *cells.begin();
-        auto coordinates = cell.getCoordinates();
-        BOOST_TEST(coordinates.first == 0);
-        BOOST_TEST(coordinates.second == 1);
+        auto cell1 = *cells.begin();
+        auto [fst1, snd1] = cell1.getCoordinates();
+        BOOST_REQUIRE(fst1 == 0);
+        BOOST_REQUIRE(snd1 == 1);
+
+        auto cell2 = *(++cells.begin());
+        auto [fst2, snd2] = cell2.getCoordinates();
+        BOOST_REQUIRE(fst2 == 1);
+        BOOST_REQUIRE(snd2 == 1);
     }
 
 

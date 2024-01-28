@@ -2,10 +2,9 @@
 // Created by Imran Jabrayilov on 28.01.24.
 //
 
-#include "game/cells/Cell.hpp"
-
 #include <cassert>
 
+#include "game/cells/Cell.hpp"
 #include "settings.hpp"
 
 Cell::Cell(uint16_t x, uint16_t y) {

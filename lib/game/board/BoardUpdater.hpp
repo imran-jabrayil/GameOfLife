@@ -2,12 +2,12 @@
 // Created by Imran Jabrayilov on 28.01.24.
 //
 
-#ifndef BOARDUPDATER_HPP
-#define BOARDUPDATER_HPP
+#ifndef __BOARDUPDATER_HPP__
+#define __BOARDUPDATER_HPP__
 
 class BoardUpdater {
 public:
     static void Update();
 };
 
-#endif //BOARDUPDATER_HPP
+#endif // __BOARDUPDATER_HPP__
